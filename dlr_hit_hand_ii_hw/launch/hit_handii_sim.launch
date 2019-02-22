@@ -24,7 +24,7 @@
        to lose contact with the ground, so the robot won't be able to properly
        navigate. See
        https://github.com/ros-simulation/gazebo_ros_pkgs/issues/612 -->
-	<!-- <rosparam file="$(find kit_head_hw)/config/gazebo_controllers.yaml" command="load" /> -->
+	<!-- <rosparam file="$(find dlr_hit_hand_ii_hw)/config/gazebo_controllers.yaml" command="load" /> -->
   	
 
 	<!-- LAUNCH IMPLEMENTATION -->

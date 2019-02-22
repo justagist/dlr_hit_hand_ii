@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 <!-- <robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro"> -->
 
-	<xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.gazebo.xacro" />
+	<!-- <xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.gazebo.xacro" /> -->
 	<xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.transmission.xacro" />
 
 	<xacro:property name="damping_all" value="1" />
-	<xacro:property name="pi" value="3.1415926535897931" />
+	<xacro:property name="pi_val" value="3.1415926535897931" />
 	<xacro:property name="abd_lb" value="-20" />
 	<xacro:property name="abd_ub" value="20" />
 	<xacro:property name="inner_lb" value="0" />
@@ -31,7 +31,7 @@
 			<child link="${name}_abd_link"/>
 			<axis xyz="0 0 1" />
 			<dynamics damping="${damping}" />
-			<limit lower="${abd_lb * pi / 180}" upper="${abd_ub * pi / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
+			<limit lower="${abd_lb * pi_val / 180}" upper="${abd_ub * pi_val / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
 		</joint>
 
 		<link name="${name}_abd_link">
@@ -53,12 +53,12 @@
 		<!-- inner joint between abd_link and proximal_link -->
 		<joint name="${name}_inner_joint" type="revolute">
 			<!-- coincident with abd_joint, rotated of 90 degrees along x -->
-			<origin xyz="0 0 0" rpy="${pi/2} 0 0" />
+			<origin xyz="0 0 0" rpy="${pi_val/2} 0 0" />
 			<parent link="${name}_abd_link"/>
 			<child link="${name}_proximal_link"/>
 			<axis xyz="0 0 1" />
 			<dynamics damping="${damping}" />
-			<limit lower="${inner_lb * pi / 180}" upper="${inner_ub * pi / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
+			<limit lower="${inner_lb * pi_val / 180}" upper="${inner_ub * pi_val / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
 		</joint>
 
 		<link name="${name}_proximal_link">
@@ -92,7 +92,7 @@
 			<child link="${name}_medial_link"/>
 			<axis xyz="0 0 1" />
 			<dynamics damping="${damping}" />
-			<limit lower="${outer_lb * pi / 180}" upper="${outer_ub * pi / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
+			<limit lower="${outer_lb * pi_val / 180}" upper="${outer_ub * pi_val / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
 		</joint>
 
 		<link name="${name}_medial_link">
@@ -121,12 +121,12 @@
 		<!-- outer2 joint between medial_link and distal_link -->
 		<joint name="${name}_outer2_joint" type="revolute">
 			 
-			<origin xyz="0.025 0 0" rpy="0 0 ${- pi / 2}" />
+			<origin xyz="0.025 0 0" rpy="0 0 ${- pi_val / 2}" />
 			<parent link="${name}_medial_link"/>
 			<child link="${name}_distal_link"/>
 			<axis xyz="0 0 1" />
 			<dynamics damping="${damping}" />
-			<limit lower="${outer_lb * pi / 180}" upper="${outer_ub * pi / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
+			<limit lower="${outer_lb * pi_val / 180}" upper="${outer_ub * pi_val / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
 		</joint>
 
 		<link name="${name}_distal_link">
@@ -159,7 +159,7 @@
 
 		<!-- joint between arm_end_effector and hit2_palm_link -->
 		<joint name="${name}_palm_joint" type="fixed" >
-			<insert_block name="origin" />
+			<xacro:insert_block name="origin" />
 			<parent link="${parent}" />
 			<child link="${name}_palm_link" />
 		</joint>
@@ -193,16 +193,16 @@
 		<!-- macro for each finger -->
 		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_thumb" position="0.062569057 0.044544548 0.080044647" orientation="0.41136 -1.08366 0.225804" damping="${damping_all}" />
 	
-		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_index" position="-0.002529881 0.036800135 0.108743545" orientation="3.05433 -${pi/2} 0" damping="${damping_all}" />
+		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_index" position="-0.002529881 0.036800135 0.108743545" orientation="3.05433 -${pi_val/2} 0" damping="${damping_all}" />
 	
-		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_middle" position="-0.0037 0.01 0.119043545" orientation="${pi} -${pi/2} 0" damping="${damping_all}" />
+		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_middle" position="-0.0037 0.01 0.119043545" orientation="${pi_val} -${pi_val/2} 0" damping="${damping_all}" />
 	
-		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_ring" position="-0.002529881 -0.016800135 0.114043545" orientation="-3.05433 -${pi/2} 0" damping="${damping_all}" />
+		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_ring" position="-0.002529881 -0.016800135 0.114043545" orientation="-3.05433 -${pi_val/2} 0" damping="${damping_all}" />
 	
-		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_pinky" position="0.000971571 -0.043396306 0.095043545" orientation="-2.96706 -${pi/2} 0" damping="${damping_all}" />
+		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_pinky" position="0.000971571 -0.043396306 0.095043545" orientation="-2.96706 -${pi_val/2} 0" damping="${damping_all}" />
 	
 		<!-- extensions -->
-		<xacro:dlr_hit2_gazebo name="${name}" />
+		<!-- <xacro:dlr_hit2_gazebo name="${name}" /> -->
 		<xacro:dlr_hit2_transmission name="${name}" />
 
 	</xacro:macro>

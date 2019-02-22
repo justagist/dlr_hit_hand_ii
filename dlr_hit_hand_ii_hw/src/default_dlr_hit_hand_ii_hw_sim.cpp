@@ -59,9 +59,9 @@ bool DefaultDLRHitHandIIHWSim::initSim(
     int njoints = 7;
 
     std::vector<std::string> joint_names;
-    
+
     std::vector<std::string> raw_joint_names = {
-      "_thumb_abd_joint", "_thumb_inner_joint", "right_thumb_outer1_joint", "_thumb_outer2_joint",
+      "_thumb_outer1_joint", "_thumb_outer2_joint","_thumb_inner_joint",
       "_index_abd_joint", "_index_inner_joint", "_index_outer1_joint", "_index_outer2_joint",
       "_middle_abd_joint", "_middle_inner_joint", "_middle_outer1_joint", "_middle_outer2_joint",
       "_ring_abd_joint", "_ring_inner_joint", "_ring_outer1_joint", "_ring_outer2_joint",

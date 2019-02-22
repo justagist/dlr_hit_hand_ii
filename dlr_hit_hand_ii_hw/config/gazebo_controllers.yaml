@@ -4,10 +4,17 @@
 # contact with the ground, so the robot won't be able to properly navigate. See
 # https://github.com/ros-simulation/gazebo_ros_pkgs/issues/612
 
+# _thumb_outer1_joint", "_thumb_outer2_joint","_thumb_inner_joint",
+      # "_index_abd_joint", "_index_inner_joint", "_index_outer1_joint", "_index_outer2_joint",
+      # "_middle_abd_joint", "_middle_inner_joint", "_middle_outer1_joint", "_middle_outer2_joint",
+      # "_ring_abd_joint", "_ring_inner_joint", "_ring_outer1_joint", "_ring_outer2_joint",
+      # "_pinky_abd_joint", "_pinky_inner_joint", "_pinky_outer1_joint", "_pinky_outer2_joint"
+
+
 gazebo_ros_control:
   pid_gains:
     # these gains are used by the gazebo_ros_control plugin
-    head_neck_pitch_joint:
+    right_index_abd_joint:
       p: 100.0
       i: 0.1
       d: 10.0
@@ -15,42 +22,126 @@ gazebo_ros_control:
       antiwindup: false
       publish_state: true
     # the following gains are used by the gazebo_mimic_joint plugin
-    head_neck_roll_joint:
+    right_thumb_outer1_joint:
       p: 100.0
       i: 0.1
       d: 10.0
       i_clamp: 0.2
       antiwindup: false
       publish_state: true
-    head_neck_yaw_joint:
+    right_thumb_outer2_joint:
       p: 100.0
       i: 0.1
       d: 10.0
       i_clamp: 0.2
       antiwindup: false
       publish_state: true
-    head_head_tilt_joint:
+    right_thumb_inner_joint:
       p: 100.0
       i: 0.1
       d: 10.0
       i_clamp: 0.2
       antiwindup: false
       publish_state: true
-    head_eyes_tilt_joint:
+    right_index_inner_joint:
       p: 100.0
       i: 0.1
       d: 10.0
       i_clamp: 0.2
       antiwindup: false
       publish_state: true
-    head_left_eye_joint:
+    right_index_outer1_joint:
       p: 100.0
       i: 0.1
       d: 10.0
       i_clamp: 0.2
       antiwindup: false
       publish_state: true
-    head_right_eye_joint:
+    right_index_outer2_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_middle_abd_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_middle_inner_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_middle_outer1_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_middle_outer2_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_ring_abd_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_ring_inner_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_ring_outer1_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_ring_outer2_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_pinky_abd_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_pinky_inner_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_pinky_outer1_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    right_pinky_outer2_joint:
       p: 100.0
       i: 0.1
       d: 10.0

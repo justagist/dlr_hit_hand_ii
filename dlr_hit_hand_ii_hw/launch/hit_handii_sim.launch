@@ -56,7 +56,7 @@
 			<arg name="use_sim_time" value="true"/>
 			<arg name="gui" value="true"/>
 			<arg name="headless" value="true"/>
-			<arg name="debug" value="false"/>
+			<arg name="debug" value="true"/>
 
 		</include>
 	</group>

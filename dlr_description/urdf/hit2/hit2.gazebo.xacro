@@ -1,139 +1,321 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<xacro:macro name="schunk_sdh_gazebo" params="name">
+    <xacro:macro name="dlr_hit2_gazebo" params="name">
 
-		<gazebo reference="${name}_palm_link">
-			<material>Schunk/LightGrey</material>
-			<turnGravityOff>false</turnGravityOff>
-		</gazebo>
-	
-		<gazebo reference="${name}_finger_11_link">
-			<material>Schunk/LightGrey</material>
-			<turnGravityOff>false</turnGravityOff>
-		</gazebo>
-	
-		<gazebo reference="${name}_finger_12_link">
-			<selfCollide>true</selfCollide>
-			<sensor name='${name}_finger_12_contact_sensor' type='contact'>
-				<always_on>true</always_on>
-				<update_rate>100</update_rate>
-				<contact>
-					<collision>${name}_finger_12_link_geom</collision>
-				</contact>
-				<plugin name="${name}_finger_12_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-					<alwaysOn>true</alwaysOn>
-					<updateRate>100.0</updateRate>
-					<frameName>${name}_finger_12_link</frameName>
-					<bumperTopicName>${name}_finger_12_bumper</bumperTopicName>
-				</plugin>
-			</sensor>
-			<material>Schunk/LightGrey</material>
-			<turnGravityOff>false</turnGravityOff>
-		</gazebo>
+        <gazebo reference="${name}_palm_link">
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+    
+        <gazebo reference="${name}_thumb_abd_link">
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+    
+        <gazebo reference="${name}_thumb_proximal_link">
+            <selfCollide>true</selfCollide>
+            <sensor name='${name}_thumb_proximal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>
+                <contact>
+                    <collision>${name}_thumb_proximal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_thumb_proximal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_thumb_proximal_link</frameName>
+                    <bumperTopicName>${name}_finger_12_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
 
-		<gazebo reference="${name}_finger_13_link">
-			<selfCollide>true</selfCollide>	
-			<sensor name='${name}_finger_13_contact_sensor' type='contact'>
-				<always_on>true</always_on>
-				<update_rate>100</update_rate>				
-				<contact>
-					<collision>${name}_finger_13_link_geom</collision>
-				</contact>
-				<plugin name="${name}_finger_13_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-					<alwaysOn>true</alwaysOn>
-					<updateRate>100.0</updateRate>
-					<frameName>${name}_finger_13_link</frameName>
-					<bumperTopicName>${name}_finger_13_bumper</bumperTopicName>
-				</plugin>
-			</sensor>
-			<material>Schunk/LightGrey</material>
-		</gazebo>
+        <gazebo reference="${name}_thumb_medial_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_thumb_medial_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_thumb_medial_link_geom</collision>
+                </contact>
+                <plugin name="${name}_thumb_medial_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_thumb_medial_link</frameName>
+                    <bumperTopicName>${name}_thumb_medial_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
 
-		<gazebo reference="${name}_finger_21_link">
-			<material>Schunk/LightGrey</material>
-			<turnGravityOff>false</turnGravityOff>
-		</gazebo>
-	
-		<gazebo reference="${name}_finger_22_link">
-			<selfCollide>true</selfCollide>		
-			<sensor name='${name}_finger_22_contact_sensor' type='contact'>
-				<always_on>true</always_on>
-				<update_rate>100</update_rate>				
-				<contact>
-					<collision>${name}_finger_22_link_geom</collision>
-				</contact>
-				<plugin name="${name}_finger_22_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-					<alwaysOn>true</alwaysOn>
-					<updateRate>100.0</updateRate>
-					<frameName>${name}_finger_22_link</frameName>
-					<bumperTopicName>${name}_finger_22_bumper</bumperTopicName>
-				</plugin>
-			</sensor>
-			<material>Schunk/LightGrey</material>
-			<turnGravityOff>false</turnGravityOff>
-		</gazebo>
+        <gazebo reference="${name}_thumb_distal_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_thumb_distal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_thumb_distal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_thumb_distal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_thumb_distal_link</frameName>
+                    <bumperTopicName>${name}_thumb_distal_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
 
-		<gazebo reference="${name}_finger_23_link">
-			<selfCollide>true</selfCollide>
-			<sensor name='${name}_finger_23_contact_sensor' type='contact'>
-				<always_on>true</always_on>
-				<update_rate>100</update_rate>				
-				<contact>
-					<collision>${name}_finger_23_link_geom</collision>
-				</contact>
-				<plugin name="${name}_finger_23_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-					<alwaysOn>true</alwaysOn>
-					<updateRate>100.0</updateRate>
-					<frameName>${name}_finger_23_link</frameName>
-					<bumperTopicName>${name}_finger_23_bumper</bumperTopicName>
-				</plugin>
-			</sensor>
-			<material>Schunk/LightGrey</material>
-		</gazebo>
+        <gazebo reference="${name}_index_abd_link">
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+    
+        <gazebo reference="${name}_index_proximal_link">
+            <selfCollide>true</selfCollide>
+            <sensor name='${name}_index_proximal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>
+                <contact>
+                    <collision>${name}_index_proximal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_index_proximal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_index_proximal_link</frameName>
+                    <bumperTopicName>${name}_finger_12_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
 
-		<gazebo reference="${name}_thumb_1_link">
-			<material>Schunk/LightGrey</material>
-			<turnGravityOff>false</turnGravityOff>
-		</gazebo>
+        <gazebo reference="${name}_index_medial_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_index_medial_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_index_medial_link_geom</collision>
+                </contact>
+                <plugin name="${name}_index_medial_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_index_medial_link</frameName>
+                    <bumperTopicName>${name}_index_medial_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
 
-		<gazebo reference="${name}_thumb_2_link">
-			<selfCollide>true</selfCollide>
-			<sensor name='${name}_thumb_2_contact_sensor' type='contact'>
-				<always_on>true</always_on>
-				<update_rate>100</update_rate>				
-				<contact>
-					<collision>${name}_thumb_2_link_geom</collision>
-				</contact>
-				<plugin name="${name}_thumb_2_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-					<alwaysOn>true</alwaysOn>
-					<updateRate>100.0</updateRate>
-					<frameName>${name}_thumb_2_link</frameName>
-					<bumperTopicName>${name}_thumb_2_bumper</bumperTopicName>
-				</plugin>				
-			</sensor>
-			<material>Schunk/LightGrey</material>
-			<turnGravityOff>false</turnGravityOff>
-		</gazebo>
+        <gazebo reference="${name}_index_distal_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_index_distal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_index_distal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_index_distal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_index_distal_link</frameName>
+                    <bumperTopicName>${name}_index_distal_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
 
-		<gazebo reference="${name}_thumb_3_link">
-			<selfCollide>true</selfCollide>
-			<sensor name='${name}_thumb_3_contact_sensor' type='contact'>
-				<always_on>true</always_on>
-				<update_rate>100</update_rate>				
-				<contact>
-					<collision>${name}_thumb_3_link_geom</collision>
-				</contact>
-				<plugin name="${name}_thumb_3_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-					<alwaysOn>true</alwaysOn>
-					<updateRate>100.0</updateRate>
-					<frameName>${name}_thumb_3_link</frameName>
-					<bumperTopicName>${name}_thumb_3_bumper</bumperTopicName>
-				</plugin>
-			</sensor>			
-			<material>Schunk/LightGrey</material>
-		</gazebo>
+        <gazebo reference="${name}_middle_abd_link">
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+    
+        <gazebo reference="${name}_middle_proximal_link">
+            <selfCollide>true</selfCollide>
+            <sensor name='${name}_middle_proximal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>
+                <contact>
+                    <collision>${name}_middle_proximal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_middle_proximal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_middle_proximal_link</frameName>
+                    <bumperTopicName>${name}_finger_12_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
 
-	</xacro:macro>
+        <gazebo reference="${name}_middle_medial_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_middle_medial_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_middle_medial_link_geom</collision>
+                </contact>
+                <plugin name="${name}_middle_medial_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_middle_medial_link</frameName>
+                    <bumperTopicName>${name}_middle_medial_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
+
+        <gazebo reference="${name}_middle_distal_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_middle_distal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_middle_distal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_middle_distal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_middle_distal_link</frameName>
+                    <bumperTopicName>${name}_middle_distal_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
+
+        <gazebo reference="${name}_ring_abd_link">
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+    
+        <gazebo reference="${name}_ring_proximal_link">
+            <selfCollide>true</selfCollide>
+            <sensor name='${name}_ring_proximal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>
+                <contact>
+                    <collision>${name}_ring_proximal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_ring_proximal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_ring_proximal_link</frameName>
+                    <bumperTopicName>${name}_finger_12_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+
+        <gazebo reference="${name}_ring_medial_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_ring_medial_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_ring_medial_link_geom</collision>
+                </contact>
+                <plugin name="${name}_ring_medial_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_ring_medial_link</frameName>
+                    <bumperTopicName>${name}_ring_medial_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
+
+        <gazebo reference="${name}_ring_distal_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_ring_distal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_ring_distal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_ring_distal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_ring_distal_link</frameName>
+                    <bumperTopicName>${name}_ring_distal_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
+
+        <gazebo reference="${name}_pinky_abd_link">
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+    
+        <gazebo reference="${name}_pinky_proximal_link">
+            <selfCollide>true</selfCollide>
+            <sensor name='${name}_pinky_proximal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>
+                <contact>
+                    <collision>${name}_pinky_proximal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_pinky_proximal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_pinky_proximal_link</frameName>
+                    <bumperTopicName>${name}_finger_12_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+            <turnGravityOff>false</turnGravityOff>
+        </gazebo>
+
+        <gazebo reference="${name}_pinky_medial_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_pinky_medial_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_pinky_medial_link_geom</collision>
+                </contact>
+                <plugin name="${name}_pinky_medial_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_pinky_medial_link</frameName>
+                    <bumperTopicName>${name}_pinky_medial_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
+
+        <gazebo reference="${name}_pinky_distal_link">
+            <selfCollide>true</selfCollide> 
+            <sensor name='${name}_pinky_distal_contact_sensor' type='contact'>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>              
+                <contact>
+                    <collision>${name}_pinky_distal_link_geom</collision>
+                </contact>
+                <plugin name="${name}_pinky_distal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>100.0</updateRate>
+                    <frameName>${name}_pinky_distal_link</frameName>
+                    <bumperTopicName>${name}_pinky_distal_bumper</bumperTopicName>
+                </plugin>
+            </sensor>
+            <material>DLR/LightGrey</material>
+        </gazebo>
+
+        <gazebo>
+            <plugin name="dlr_hit_hand_ii_gazebo_ros_control" filename="libdlr_hit_hand_ii_gazebo_ros_control.so">
+                <robotNamespace>${name}</robotNamespace>
+                <robotSimType>dlr_hit_hand_ii_hw/DefaultDLRHitHandIIHWSim</robotSimType>
+                <legacyModeNS>false</legacyModeNS>
+            </plugin>
+        </gazebo>
+
+    </xacro:macro>
 
 </robot>

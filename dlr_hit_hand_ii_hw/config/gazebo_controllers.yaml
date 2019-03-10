@@ -14,7 +14,7 @@
 gazebo_ros_control:
   pid_gains:
     # these gains are used by the gazebo_ros_control plugin
-    right_index_abd_joint:
+    right_thumb_abd_joint:
       p: 100.0
       i: 0.1
       d: 10.0
@@ -22,6 +22,13 @@ gazebo_ros_control:
       antiwindup: false
       publish_state: true
     # the following gains are used by the gazebo_mimic_joint plugin
+    right_thumb_inner_joint:
+      p: 100.0
+      i: 0.1
+      d: 10.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
     right_thumb_outer1_joint:
       p: 100.0
       i: 0.1
@@ -36,7 +43,7 @@ gazebo_ros_control:
       i_clamp: 0.2
       antiwindup: false
       publish_state: true
-    right_thumb_inner_joint:
+    right_index_abd_joint:
       p: 100.0
       i: 0.1
       d: 10.0

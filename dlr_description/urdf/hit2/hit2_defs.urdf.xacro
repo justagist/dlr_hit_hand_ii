@@ -31,11 +31,20 @@
 			<parent link="${parent}"/>
 			<child link="${name}_abd_link"/>
 			<axis xyz="0 0 1" />
-			<dynamics damping="${damping}" />
+			<safety_controller soft_lower_limit="${abd_lb * pi_val / 180}"
+                         soft_upper_limit="${abd_ub * pi_val / 180}"
+                         k_position="30"
+                         k_velocity="30"/>
+			<dynamics friction="1.0" damping="${damping}" />
 			<limit lower="${abd_lb * pi_val / 180}" upper="${abd_ub * pi_val / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
 		</joint>
 
 		<link name="${name}_abd_link">
+			<inertial>
+		      <origin rpy="0 0 0" xyz="0 0 0"/>
+		      <mass value="0.5"/>
+		      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		    </inertial>
 <!-- 			<inertial>
 				<origin xyz="0 0 0" rpy="0 0 0"/>
 				<mass value="0.0"/>
@@ -58,11 +67,21 @@
 			<parent link="${name}_abd_link"/>
 			<child link="${name}_proximal_link"/>
 			<axis xyz="0 0 1" />
-			<dynamics damping="${damping}" />
+			<safety_controller soft_lower_limit="${inner_lb * pi_val / 180}"
+                         soft_upper_limit="${inner_ub * pi_val / 180}"
+                         k_position="30"
+                         k_velocity="30"/>
+			<dynamics friction="1.0" damping="${damping}" />
 			<limit lower="${inner_lb * pi_val / 180}" upper="${inner_ub * pi_val / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
 		</joint>
 
 		<link name="${name}_proximal_link">
+			    <inertial>
+			      <origin rpy="0 0 0" xyz="0 0 0"/>
+			      <mass value="0.044370598"/>
+			      <!-- using inertia wrt ACS0 (joint frame) - to be changed if baricentrical is needed -->
+			      <inertia ixx="4.5592704e-06" ixy="9.0783105e-07" ixz="-9.399771e-07" iyy="4.9045259e-05" iyz="1.7052714e-08" izz="5.0524234e-05"/>
+			    </inertial>
 			<!-- <inertial>
 				<origin xyz="30.164510e -1.0130813 0.50813186" rpy="0 0 0"/>
 				<mass value="0.044370598"/>
@@ -92,11 +111,21 @@
 			<parent link="${name}_proximal_link"/>
 			<child link="${name}_medial_link"/>
 			<axis xyz="0 0 1" />
-			<dynamics damping="${damping}" />
+			<safety_controller soft_lower_limit="${outer_lb * pi_val / 180}"
+                         soft_upper_limit="${outer_ub * pi_val / 180}"
+                         k_position="30"
+                         k_velocity="30"/>
+			<dynamics friction="1.0" damping="${damping}" />
 			<limit lower="${outer_lb * pi_val / 180}" upper="${outer_ub * pi_val / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
 		</joint>
 
 		<link name="${name}_medial_link">
+			<inertial>
+		      <origin rpy="0 0 0" xyz="0 0 0"/>
+		      <mass value="0.027110192"/>
+		      <!-- using inertia wrt ACS0 (joint frame) - to be changed if baricentrical is needed -->
+		      <inertia ixx="2.2900229e-06" ixy="4.0604622e-07" ixz="1.4362094e-07" iyy="4.2155489e-06" iyz="-4.3115648e-08" izz="4.4292927e-06"/>
+		    </inertial>
 			<!-- <inertial>
 			<origin xyz="5.7271879 -1.6164173 -1.1567914" rpy="0 0 0"/>
 				<mass value="0.027110192"/>
@@ -126,11 +155,21 @@
 			<parent link="${name}_medial_link"/>
 			<child link="${name}_distal_link"/>
 			<axis xyz="0 0 1" />
-			<dynamics damping="${damping}" />
+			<safety_controller soft_lower_limit="${outer_lb * pi_val / 180}"
+                         soft_upper_limit="${outer_ub * pi_val / 180}"
+                         k_position="30"
+                         k_velocity="30"/>
+			<dynamics friction="1.0" damping="${damping}" />
 			<limit lower="${outer_lb * pi_val / 180}" upper="${outer_ub * pi_val / 180}" effort="${effort}" velocity="${velocity}"/> <!-- effort="100" velocity="5" -->
 		</joint>
 
 		<link name="${name}_distal_link">
+			<inertial>
+		      <origin rpy="0 0 0" xyz="0 0 0"/>
+		      <mass value="0.018179709"/>
+		      <!-- using inertia wrt ACS0 (joint frame) - to be changed if baricentrical is needed -->
+		      <inertia ixx="2.5867271e-06" ixy="1.5840536e-07" ixz="-7.8205885e-10" iyy="8.4596248e-07" iyz="-4.8358115e-09" izz="2.5838485e-06"/>
+		    </inertial>
 			<!-- <inertial>
 			<origin xyz="-0.83348211 6.1007977 1.7728256" rpy="0 0 0"/>
 				<mass value="0.018179709"/>
@@ -166,6 +205,9 @@
 		</joint>
 
 		<link name="${name}_palm_link">
+			<inertial>
+				<xacro:insert_block name="negligible_inertia"/>
+			</inertial>
 			<!-- <inertial> -->
 				<!-- PALM MASS AND INERTIA TO BE ESTIMATED!!!! -->
 				<!-- <origin xyz="0 0 0" rpy="0 0 0"/>

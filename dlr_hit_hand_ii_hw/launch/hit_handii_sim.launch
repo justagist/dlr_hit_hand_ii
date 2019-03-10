@@ -2,7 +2,7 @@
 	<!-- LAUNCH INTERFACE -->
 	
 	<!-- in case you have different robot configurations -->
-	<arg name="robot_name" default="head"/>
+	<arg name="robot_name" default="right"/>
 
 	<arg name="t1_limits" default="false"/>
 	<arg name="controllers" default="joint_trajectory_controller"/>
@@ -46,7 +46,6 @@
 	<!-- robot simulation uses the full robot description -->
 	<group if="$(arg use_hand_sim)">
 		<!-- spawn the robot in gazebo -->
-		<param name="robot_description" command="$(find xacro)/xacro --inorder $(find dlr_description)/urdf/hit2/hit2.urdf.xacro"/>
 		<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model $(arg robot_name)"  respawn="false" output="screen" />
 
 		<!-- enable/disable gui at will, the rviz listens to the simulation -->

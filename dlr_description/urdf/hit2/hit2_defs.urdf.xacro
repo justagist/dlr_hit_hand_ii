@@ -5,7 +5,7 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro"> -->
 
-	<xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.gazebo.xacro" />
+	<!-- <xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.gazebo.xacro" /> -->
 	<xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.transmission.xacro" />
 
 	<xacro:property name="damping_all" value="1" />
@@ -202,7 +202,7 @@
 		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_pinky" position="0.000971571 -0.043396306 0.095043545" orientation="-2.96706 -${pi/2} 0" damping="${damping_all}" />
 	
 		<!-- extensions -->
-		<xacro:dlr_hit2_gazebo name="${name}" />
+		<!-- <xacro:dlr_hit2_gazebo name="${name}" /> -->
 		<xacro:dlr_hit2_transmission name="${name}" />
 
 	</xacro:macro>

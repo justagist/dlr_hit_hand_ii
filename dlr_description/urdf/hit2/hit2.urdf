@@ -103,14 +103,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -133,14 +133,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
     </collision>
   </link>
@@ -163,14 +163,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -212,14 +212,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -242,14 +242,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
     </collision>
   </link>
@@ -272,14 +272,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -321,14 +321,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -351,14 +351,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
     </collision>
   </link>
@@ -381,14 +381,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -430,14 +430,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -460,14 +460,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
     </collision>
   </link>
@@ -490,14 +490,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -539,14 +539,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_proximal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/proximal.stl"/>
       </geometry>
     </collision>
   </link>
@@ -569,14 +569,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_medial.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/medial.stl"/>
       </geometry>
     </collision>
   </link>
@@ -599,14 +599,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
       <material name="DLR/LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://dlr_description/meshes/hit2/phalanx_distal.stl"/>
+        <mesh filename="package://dlr_description/meshes/hit2/distal.stl"/>
       </geometry>
     </collision>
   </link>

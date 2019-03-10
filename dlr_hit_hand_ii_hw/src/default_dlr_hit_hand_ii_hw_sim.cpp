@@ -56,12 +56,12 @@ bool DefaultDLRHitHandIIHWSim::initSim(
     // filter transmission interface
 
     std::vector<transmission_interface::TransmissionInfo> transmissions_filtered;
-    int njoints = 7;
+    int njoints = 20;
 
     std::vector<std::string> joint_names;
 
     std::vector<std::string> raw_joint_names = {
-      "_palm_joint", "_thumb_outer1_joint", "_thumb_outer2_joint","_thumb_inner_joint","_thumb_abd_joint",
+      "_thumb_outer1_joint", "_thumb_outer2_joint","_thumb_inner_joint","_thumb_abd_joint",
       "_index_abd_joint", "_index_inner_joint", "_index_outer1_joint", "_index_outer2_joint",
       "_middle_abd_joint", "_middle_inner_joint", "_middle_outer1_joint", "_middle_outer2_joint",
       "_ring_abd_joint", "_ring_inner_joint", "_ring_outer1_joint", "_ring_outer2_joint",
@@ -70,6 +70,27 @@ bool DefaultDLRHitHandIIHWSim::initSim(
     for(int i = 0; i < raw_joint_names.size(); i++){
         joint_names.push_back( robot_namespace + raw_joint_names[i] );
     }
+
+    // joint_names.push_back( robot_namespace + std::string("_thumb_abd_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_thumb_inner_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_thumb_outer1_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_thumb_outer2_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_index_abd_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_index_inner_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_index_outer1_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_index_outer2_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_middle_abd_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_middle_inner_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_middle_outer1_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_middle_outer2_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_ring_abd_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_ring_inner_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_ring_outer1_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_ring_outer2_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_pinky_abd_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_pinky_inner_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_pinky_outer1_joint") );
+    // joint_names.push_back( robot_namespace + std::string("_pinky_outer2_joint") );
 
 
     for (int j = 0; j < njoints; ++j)

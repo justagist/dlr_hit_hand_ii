@@ -6,6 +6,7 @@
        xmlns:xacro="http://ros.org/wiki/xacro"> -->
 
 	<xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.inertia.xacro" />
+
 	<xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.transmission.xacro" />
 	<xacro:include filename="$(find dlr_description)/urdf/hit2/hit2.gazebo.xacro" />
 
@@ -245,7 +246,7 @@
 		<xacro:dlr_hit2_finger parent="${name}_palm_link" name="${name}_pinky" position="0.000971571 -0.043396306 0.095043545" orientation="-2.96706 -${pi_val/2} 0" damping="${damping_all}" />
 	
 		<!-- extensions -->
-		<xacro:dlr_hit2_gazebo name="${name}" />
+		<!-- <xacro:dlr_hit2_gazebo name="${name}" /> -->
 		<xacro:dlr_hit2_transmission name="${name}" />
 
 	</xacro:macro>
